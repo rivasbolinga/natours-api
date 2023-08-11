@@ -126,16 +126,7 @@ const patchTour = (req, res) => {
 
 
 // Call the functions with route
-app
-.route('/api/v1/tours')
-.get(getAllTours)
-.post(postTour)
 
-app
-.route('/api/v1/tours/:id')
-.get(getTour)
-.delete(deleteTour)
-.patch(patchTour)
 
 ///////////////////// 
 //USERS
@@ -237,14 +228,33 @@ const patchUser = (req, res) => {
     })
   }
 }
+/////////////////////
+/// ROUTES
+/////////////////////
 
-app
-.route('/api/v1/users')
+const tourRouter = express.Router();
+const userRouter = express.Router();
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
+
+tourRouter
+.route('/')
+.get(getAllTours)
+.post(postTour)
+
+tourRouter
+.route('/:id')
+.get(getTour)
+.delete(deleteTour)
+.patch(patchTour)
+
+userRouter
+.route('/')
 .get(getAllUsers)
 .post(createUser)
 
-app
-  .route('/api/v1/users/:id')
+userRouter
+  .route('/:id')
   .get(getUser)
   .delete(deleteUser)
   .patch(patchUser)
