@@ -1,17 +1,24 @@
 const express = require('express')
 const app = express()
 const fs = require('fs')
-
+app.use(express.json());
 // 1. Read data
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 )
+
 // 2.setting up a server to listen on port 3000
 const port = 3000
 
 app.listen(port, () => {
   console.log(`App running on port ${port}...`)
 })
+
+//midelware
+app.use((req, res, next) => {
+  console.log('midelware');
+  next();
+});
 
 // 3. GET, POST, PATCH AND DELETE
 const getAllTours = (req, res) => {
@@ -23,6 +30,7 @@ const getAllTours = (req, res) => {
     },
   });
 }
+
 const getTour = (req, res) => {
   const id = req.params.id * 1
   const tour = tours.find((el) => el.id === id)
@@ -69,6 +77,7 @@ const postTour = (req, res) => {
   tours.push(newTour)
 
   // To post, we need to write the file, but always as ASYNC because we are inside a callback function!!
+
   fs.writeFile(
     `${__dirname}/dev-data/data/tours-simple.json`,
     JSON.stringify(tours),
@@ -90,6 +99,7 @@ const postTour = (req, res) => {
     }
   )
 }
+
 const patchTour = (req, res) => {
   const id = req.params.id * 1
   const tour = tours.find((el) => el.id === id)
@@ -107,6 +117,7 @@ const patchTour = (req, res) => {
     })
   }
 }
+
 
 // Call the functions with route
 app
