@@ -27,102 +27,7 @@ app.use((req, res, next) => {
 });
 
 // 3. GET, POST, PATCH AND DELETE
-const getAllTours = (req, res) => {
-  res.status(200).json({
-    message: 'Hello from the server',
-    results: tours.length,
-    data: {
-      tours,
-    },
-  });
-}
 
-const getTour = (req, res) => {
-  const id = req.params.id * 1
-  const tour = tours.find((el) => el.id === id)
-  if (!tour) {
-    return res.status(404).json({
-      status: 'fail',
-      message: 'Invalid ID',
-    })
-  } else {
-    res.status(200).json({
-      status: 'success',
-      data: {
-        tour,
-      },
-    })
-  }
-}
-
-const deleteTour = (req, res) => {
-  const id = req.params.id * 1
-  const tour = tours.find((el) => el.id === id)
-  if (!tour) {
-    return res.status(404).json({
-      status: 'fail',
-      message: 'Invalid ID',
-    })
-  } else {
-    res.status(204).json({
-      status: 'success',
-      data: {
-        tour: 'null',
-      },
-    })
-  }
-}
-const postTour = (req, res) => {
-  const newId = tours[tours.length - 1].id + 1
-  const newTour = Object.assign(
-    {
-      id: newId,
-    },
-    req.body
-  )
-  tours.push(newTour)
-
-  // To post, we need to write the file, but always as ASYNC because we are inside a callback function!!
-
-  fs.writeFile(
-    `${__dirname}/dev-data/data/tours-simple.json`,
-    JSON.stringify(tours),
-    (err) => {
-      if (err) {
-        res.status(500).json({
-          status: 'error',
-          message: 'Error writing data to file',
-        })
-      } else {
-        res.status(201).json({
-          status: 'success',
-          data: {
-            tour: newTour,
-          },
-        })
-        console.log(res)
-      }
-    }
-  )
-}
-
-const patchTour = (req, res) => {
-  const id = req.params.id * 1
-  const tour = tours.find((el) => el.id === id)
-  if (!tour) {
-    return res.status(404).json({
-      status: 'fail',
-      message: 'Invalid ID',
-    })
-  } else {
-    res.status(200).json({
-      status: 'success',
-      data: {
-        tour: '<Updated tour here....>',
-      },
-    })
-  }
-}
 
 
 // Call the functions with route
@@ -232,29 +137,8 @@ const patchUser = (req, res) => {
 /// ROUTES
 /////////////////////
 
-const tourRouter = express.Router();
-const userRouter = express.Router();
+
+
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
-tourRouter
-.route('/')
-.get(getAllTours)
-.post(postTour)
-
-tourRouter
-.route('/:id')
-.get(getTour)
-.delete(deleteTour)
-.patch(patchTour)
-
-userRouter
-.route('/')
-.get(getAllUsers)
-.post(createUser)
-
-userRouter
-  .route('/:id')
-  .get(getUser)
-  .delete(deleteUser)
-  .patch(patchUser)
