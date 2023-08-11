@@ -68,7 +68,7 @@ const postTour = (req, res) => {
   )
   tours.push(newTour)
 
-  // 5. To post, we need to write the file, but always as ASYNC because we are inside a callback function!!
+  // To post, we need to write the file, but always as ASYNC because we are inside a callback function!!
   fs.writeFile(
     `${__dirname}/dev-data/data/tours-simple.json`,
     JSON.stringify(tours),
@@ -107,12 +107,17 @@ const patchTour = (req, res) => {
     })
   }
 }
-app.get('/api/v1/tours/:id', getTour);
-app.get('/api/v1/tours', getAllTours);
-app.delete('/api/v1/tours/:id', deleteTour);
-app.post('/api/v1/tour', postTour);
-app.patch('/api/v1/tours/:id', patchTour)
 
+// Call the functions with route
+app
+.route('/api/v1/tours')
+.get(getAllTours)
+.post(postTour)
 
+app
+.route('/api/v1/tours/:id')
+.get(getTour)
+.delete(deleteTour)
+.patch(patchTour)
 
 
