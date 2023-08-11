@@ -1,7 +1,8 @@
-const express = require('express')
-const app = express()
-const fs = require('fs')
-app.use(express.json());
+const express = require('express');
+const app = express();
+const fs = require('fs');
+const morgan = require('morgan');
+
 // 1. Read data
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
@@ -14,9 +15,13 @@ app.listen(port, () => {
   console.log(`App running on port ${port}...`)
 })
 
-//midelware
+//1. Middelwares
+app.use(morgan('dev'));
+
+app.use(express.json());
 app.use((req, res, next) => {
-  console.log('midelware');
+  console.log('hello from middleware👋🏼')
+  req.requestTime = new Date().toISOString();
   next();
 });
 
