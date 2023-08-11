@@ -57,14 +57,22 @@ app.post('/api/v1/tour', (req, res) => {
   )
 })
 
-// 6. Get with a variable
+// 6. Get data with a variable ID (in our case the tour id whe request)
 app.get('/api/v1/tours/:id', (req, res) => {
-  console.log(req.params);
-  res.status(200).json({
-    status: 'success'
-    // results: tours.length,
-    // data: {
-    //   tours,
-    // },
-  })
+  const id = req.params.id * 1
+  const tour = tours.find((el) => el.id === id)
+  if(!tour) {
+     return res.status(404).json({
+       status: 'fail',
+       message: 'Invalid ID'
+     })
+
+  } else {
+     res.status(200).json({
+       status: 'success',
+       data: {
+         tour
+       },
+     })
+  }
 })
