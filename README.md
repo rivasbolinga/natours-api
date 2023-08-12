@@ -1,4 +1,15 @@
-<!-- CONTRIBUTING -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+
+👤 **Andrea Rivas**
+
+- GitHub: [@rivasbolinga](https://github.com/rivasbolinga)
+- Twitter: [@AndreaRivasPal](https://twitter.com/AndreaRivasPal)
+- LinkedIn: [andrearivaspalacios](https://www.linkedin.com/in/andrearivaspalacios/)<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
