@@ -1,3 +1,54 @@
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+### Prerequisites
+
+In order to run this project you need:
+
+```sh
+ gem install bundler
+```
+
+
+### Setup
+
+Clone this repository to your desired folder:
+
+
+```sh
+  cd my-folder
+  git https://github.com/rivasbolinga/my-things.git
+```
+
+
+### Install
+
+Install this project with:
+
+
+```sh
+ 
+```
+
+
+### Usage
+
+To run the project, execute the following command:
+
+
+```sh
+  npm start
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+
+```sh
+  rspec spec
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
