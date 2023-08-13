@@ -1,13 +1,35 @@
+  <h1><b> Natours Api</b></h3>
+
+  <p> It is an API of tours. The goal of this project is to learn node.js  following the Udemy course of Jonas Scedman https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/</p>
+
+</div>
+
+<!-- TABLE OF CONTENTS -->
+
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+- [👥 Authors](#authors)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project you need to install node.js: 
 
-```sh
- gem install bundler
+```
+npm install -g npm
 ```
 
 
@@ -18,7 +40,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git https://github.com/rivasbolinga/my-things.git
+  git https://github.com/rivasbolinga/natours-api.git
 ```
 
 
@@ -28,7 +50,7 @@ Install this project with:
 
 
 ```sh
- 
+npm install
 ```
 
 
@@ -41,14 +63,6 @@ To run the project, execute the following command:
   npm start
 ```
 
-### Run tests
-
-To run tests, run the following command:
-
-
-```sh
-  rspec spec
-```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
