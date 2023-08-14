@@ -1,5 +1,6 @@
 // Create schema of tours
 const mongoose = require('mongoose');
+
 const tourSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -17,7 +18,6 @@ const tourSchema = new mongoose.Schema({
 });
 
 // Create a model (always in Upeercase)
-
 const Tour = mongoose.model('Tour', tourSchema);
 
 module.exports = Tour;

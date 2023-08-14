@@ -1,27 +1,35 @@
-const fs = require('fs');
-const Tour = require('./../models/tourModel.js');
+const Tour = require('../models/tourModel');
 
-const tours = JSON.parse(
-  fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`)
-);
+// exports.getAllTours = (req, res) => {
 
+// }
 
+// exports.getTour = (req, res) => {
 
-exports.getAllTours = (req, res) => {
+// }
 
-}
+exports.createTour = async (req, res) => {
+  try {
+    const newTour = await Tour.create(req.body);
 
-exports.getTour = (req, res) => {
+    res.status(201).json({
+      status: 'success',
+      data: {
+        tour: newTour,
+      },
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: 'failed',
+      message: error,
+    });
+  }
+};
 
-}
+// exports.updateTour = (req, res) => {
 
-exports.createTour = (req, res) => {
-}
+// }
 
-exports.updateTour = (req, res) => {
-  
-}
+// exports.deleteTour = (req, res) => {
 
-exports.deleteTour = (req, res) => {
-
-}
+// }
