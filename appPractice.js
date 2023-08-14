@@ -4,7 +4,7 @@ const fs = require('fs');
 
 // 1. Read data
 const tours = JSON.parse(fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`));
-
+  
 // 2. when a client makes a GET request to this endpoint on your server, the provided callback function will be executed.
 app.get('/api/v1/tours', (req, res)=> {
   res.status(200).json({
