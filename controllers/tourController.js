@@ -2,19 +2,37 @@ const Tour = require('../models/tourModel');
 
 exports.getAllTours = async (req, res) => {
   try {
-    // BUILDING QUERY
-    console.log('something is not working');
-    //1. Filtering
+    // BUILDING QUERIES
+
+    //1.A) Filtering
     const queryObj = { ...req.query };
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach((el) => delete queryObj[el]);
-    // 2. Advanced filtering
+
+    // 1.B) Advanced filtering
     let queryStr = JSON.stringify(queryObj);
     // We use regular expresion to replace get, gt,lte and lt for the dolar sign.
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
-    console.log(JSON.parse(queryStr), '------');
+    let query = Tour.find(JSON.parse(queryStr));
+    //2. Sorting
 
-    const query = await Tour.find(JSON.parse(queryStr));
+    if (req.query.sort) {
+      const sortBy = req.query.sort;
+      query = query.sort({ [sortBy]: 1 });
+      console.log('after sorting here📍', query);
+    } else {
+      query = query.sort({ createdAt: -1 });
+    }
+
+    //3. Field Limiting
+    if (req.query.fields) {
+      const fields = req.query.fields.split(',').join();
+      query = query.select(fields);
+    }
+    // else {
+    //   query = query.select('-__v');
+    // }
+
     const tours = await query;
     res.status(200).json({
       status: 'success',
