@@ -19,7 +19,21 @@ exports.getAllTours = async (req, res) => {
 };
 
 exports.getTour = (req, res) => {
-  console.log('get all tours');
+  try {
+    const tour = await Tour.findById(req.params.id);
+    res.status(200).json({
+      status: 'success',
+      results: tour.length,
+      data: {
+        tour,
+      },
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: 'failed',
+    });
+  }
 };
 
 exports.createTour = async (req, res) => {
