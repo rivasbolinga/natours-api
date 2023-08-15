@@ -1,5 +1,6 @@
 // Create schema of tours
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const tourSchema = new mongoose.Schema(
   {
@@ -62,11 +63,10 @@ const tourSchema = new mongoose.Schema(
       select: false,
     },
     startDates: [Date],
-    //   secretTour: {
-    //     type: Boolean,
-    //     default: false,
-    //   },
-    // },
+    secretTour: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     toJSON: { virtuals: true },
@@ -76,6 +76,21 @@ const tourSchema = new mongoose.Schema(
 
 tourSchema.virtual('durationWeeks').get(function () {
   return this.duration / 7;
+});
+
+// DOCUMENT MIDDLEWARE: runs before .save() and .create()
+tourSchema.pre('save', function (next) {
+  this.slug = slugify(this.name, { lower: true });
+  next();
+});
+
+// QUERY MIDDLEWARE
+// all the comands than start with find
+tourSchema.pre(/^find/, function (next) {
+  this.find({ secretTour: { $ne: true } });
+
+  this.start = Date.now();
+  next();
 });
 
 // Create a model (always in Uppercase)
