@@ -1,6 +1,6 @@
-// Create schema of tours
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+// const validator = require('validator');
 
 const tourSchema = new mongoose.Schema(
   {
@@ -33,6 +33,8 @@ const tourSchema = new mongoose.Schema(
     ratingsAverage: {
       type: Number,
       default: 4.5,
+      min: [1, 'Rating must be above 1.0'],
+      max: [5, 'Rating must be below 5.0'],
     },
     ratingsQuantity: {
       type: Number,
@@ -42,7 +44,16 @@ const tourSchema = new mongoose.Schema(
       type: Number,
       required: [true, 'A tour must have a price'],
     },
-    priceDiscount: Number,
+    priceDiscount: {
+      type: Number,
+      validate: {
+        validator: function (val) {
+          // this only points to current doc on NEW document creation
+          return val < this.price;
+        },
+        message: 'Discount price ({VALUE}) should be below regular price',
+      },
+    },
     summary: {
       type: String,
       trim: true,
@@ -84,8 +95,18 @@ tourSchema.pre('save', function (next) {
   next();
 });
 
+// tourSchema.pre('save', function(next) {
+//   console.log('Will save document...');
+//   next();
+// });
+
+// tourSchema.post('save', function(doc, next) {
+//   console.log(doc);
+//   next();
+// });
+
 // QUERY MIDDLEWARE
-// all the comands than start with find
+// tourSchema.pre('find', function(next) {
 tourSchema.pre(/^find/, function (next) {
   this.find({ secretTour: { $ne: true } });
 
@@ -93,7 +114,19 @@ tourSchema.pre(/^find/, function (next) {
   next();
 });
 
-// Create a model (always in Uppercase)
+tourSchema.post(/^find/, function (docs, next) {
+  console.log(`Query took ${Date.now() - this.start} milliseconds!`);
+  next();
+});
+
+// AGGREGATION MIDDLEWARE
+tourSchema.pre('aggregate', function (next) {
+  this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
+
+  console.log(this.pipeline());
+  next();
+});
+
 const Tour = mongoose.model('Tour', tourSchema);
 
 module.exports = Tour;
