@@ -102,6 +102,12 @@ const tourSchema = new mongoose.Schema(
         day: Number,
       },
     ],
+    guides: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+      },
+    ],
   },
   {
     toJSON: { virtuals: true },
@@ -120,6 +126,8 @@ tourSchema.pre('save', function (next) {
 });
 
 // tourSchema.pre('save', function(next) {
+//   const guidesPromises = this.guides.map(id => await User.findById(id));
+//   this.guides = await.Promise.all(guidesPromises);
 //   console.log('Will save document...');
 //   next();
 // });
