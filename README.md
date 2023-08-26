@@ -1,7 +1,8 @@
-<div align="center"><img width="1431" alt="Screenshot 2023-08-26 at 17 30 47" src="https://github.com/rivasbolinga/natours-api/assets/103900838/3d0002de-fd62-4b50-ac3e-79244498951e">
+<div align="center">
 
-<h1><b> Natours Api</b></h3>
-
+# Natours Api
+----
+<img width="1431" alt="Screenshot 2023-08-26 at 17 30 47" src="https://github.com/rivasbolinga/natours-api/assets/103900838/3d0002de-fd62-4b50-ac3e-79244498951e">
 </div>
 
 <!-- TABLE OF CONTENTS -->
