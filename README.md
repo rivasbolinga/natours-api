@@ -31,9 +31,9 @@
 
 <!-- GETTING STARTED -->
 
-# 💻 Getting Started <a name="getting-started"></a>
+# 💻 💻 Getting Started  💻  💻 <a name="getting-started"></a>
 
-### Prerequisites
+## Prerequisites
 
 In order to run this project you need to install node.js: 
 
@@ -42,7 +42,7 @@ npm install -g npm
 ```
 
 
-### Setup
+## Setup
 
 Clone this repository to your desired folder:
 
@@ -53,7 +53,7 @@ Clone this repository to your desired folder:
 ```
 
 
-### Install
+## Install
 
 Install this project with:
 
@@ -63,7 +63,7 @@ npm install
 ```
 
 
-### Usage
+## Usage
 
 To run the project, execute the following command:
 
@@ -74,9 +74,11 @@ To run the project, execute the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+----
+
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+# 👩🏽‍💻👩🏽‍💻👩🏽‍💻👩🏽‍💻👩🏽‍💻 Authors 👩🏽‍💻👩🏽‍💻👩🏽‍💻👩🏽‍💻👩🏽‍💻 <a name="authors"></a>
 
 
 👤 **Andrea Rivas**
