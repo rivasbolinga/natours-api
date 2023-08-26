@@ -1,6 +1,6 @@
   <h1><b> Natours Api</b></h3>
 
-  <p> It is an API of tours. The goal of this project is to learn node.js  following the Udemy course of Jonas Scedman https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/</p>
+  <p> Natours Api is a super API that hosts data tour trips.This API enables developers to access, retrieve, and manipulate data about travel destinations, itineraries, pricing, availability, and more The goal of this project is to learn node.js  following the Udemy course of Jonas Scedman https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/</p>
 
 </div>
 
