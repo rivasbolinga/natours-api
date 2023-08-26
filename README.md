@@ -22,10 +22,11 @@
 <!-- ABOUT THE PROJECT -->
 
 # 🖌️🖌️🖌️🖌️ About the project <a name="getting-started"></a> 🖌️🖌️🖌️🖌️
-<ul><li></li></ul>
-   <p> - Natours Api is a super API that hosts data tour trips.This API enables developers to access, retrieve, and manipulate data about travel destinations, itineraries, pricing, availability, and more The goal of this project is to learn node.js, express, mongoDB and mongoosh</p>
-   <p> - Coding along the Udemy course of Jonas Scedman </p> 
-   <a href='https://www.udemy.com/course/nodejs-express-mongodb-bootcamp'> - Visit Udemy course here 👆</a>
+<ul><li> Natours Api is a super API that hosts data tour trips.This API enables developers to access, retrieve, and manipulate data about travel destinations, itineraries, pricing, availability, and more The goal of this project is to learn node.js, express, mongoDB and mongoosh</li>
+<li>Coding along the Udemy course of Jonas Scedman</li><li> <a href='https://www.udemy.com/course/nodejs-express-mongodb-bootcamp'> - Visit Udemy course here 👆</a></li></ul>
+
+  
+  
    
 
 <!-- GETTING STARTED -->
