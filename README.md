@@ -1,4 +1,5 @@
-<div align="center">
+<div align="center"><img width="1431" alt="Screenshot 2023-08-26 at 17 30 47" src="https://github.com/rivasbolinga/natours-api/assets/103900838/3d0002de-fd62-4b50-ac3e-79244498951e">
+
 <h1><b> Natours Api</b></h3>
 
 </div>
@@ -20,11 +21,8 @@
 - [🙏 Acknowledgements](#acknowledgements)
 
 <!-- ABOUT THE PROJECT -->
-<div align="center">
-  # 🖌️🖌️🖌️🖌️ About the project <a name="getting-started"></a> 🖌️🖌️🖌️🖌️
-</div>
 
-
+# 🖌️🖌️🖌️🖌️ About the project <a name="getting-started"></a> 🖌️🖌️🖌️🖌️
 
 <ul><li> Natours Api is a super API that hosts data tour trips.This API enables developers to access, retrieve, and manipulate data about travel destinations, itineraries, pricing, availability, and more The goal of this project is to learn node.js, express, mongoDB and mongoosh</li>
 <li>Coding along the Udemy course of Jonas Scedman</li><li> <a href='https://www.udemy.com/course/nodejs-express-mongodb-bootcamp'>  Visit Udemy course here 👆</a></li></ul>
@@ -35,9 +33,9 @@
 
 <!-- GETTING STARTED -->
 
-# 💻 💻 Getting Started  💻  💻 <a name="getting-started"></a>
+# 🚀🚀🚀🚀🚀 Getting Started  🚀🚀🚀🚀🚀<a name="getting-started"></a>
 
-## Prerequisites
+### Prerequisites
 
 In order to run this project you need to install node.js: 
 
@@ -46,7 +44,7 @@ npm install -g npm
 ```
 
 
-## Setup
+### Setup
 
 Clone this repository to your desired folder:
 
@@ -57,7 +55,7 @@ Clone this repository to your desired folder:
 ```
 
 
-## Install
+### Install
 
 Install this project with:
 
@@ -67,7 +65,7 @@ npm install
 ```
 
 
-## Usage
+### Usage
 
 To run the project, execute the following command:
 
@@ -85,13 +83,14 @@ To run the project, execute the following command:
 # 👩🏽‍💻👩🏽‍💻👩🏽‍💻👩🏽‍💻👩🏽‍💻 Authors 👩🏽‍💻👩🏽‍💻👩🏽‍💻👩🏽‍💻👩🏽‍💻 <a name="authors"></a>
 
 
-👤 **Andrea Rivas**
+ ### 💁🏽‍♀️ **Andrea Rivas**
+
 
 - GitHub: [@rivasbolinga](https://github.com/rivasbolinga)
 - Twitter: [@AndreaRivasPal](https://twitter.com/AndreaRivasPal)
 - LinkedIn: [andrearivaspalacios](https://www.linkedin.com/in/andrearivaspalacios/)<!-- CONTRIBUTING -->
 
-## 🤝 Contributing <a name="contributing"></a>
+# 🤝🤝🤝🤝 Contributing 🤝🤝🤝🤝<a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
