@@ -1,5 +1,5 @@
-  <h1><b> Natours Api</b></h3>
-
+<div align="center">
+<h1><b> Natours Api</b></h3>
 
 </div>
 
