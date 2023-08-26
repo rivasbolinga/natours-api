@@ -11,9 +11,8 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
+- [🛠 Built With](#built-with)
+- [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -40,18 +39,16 @@
 <a href="https://www.mongodb.com/" target="_blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="html5" width="150" height="120"/></a>
 <a href="https://expressjs.com/" target="_blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" alt="html5" width="150" height="120"/></a>
 
+----
 
 <!-- Features -->
-### Key Features <a name="key-features"></a>
 
-<!-- > Describe between 1-3 key features of the application.-->
+# 👣👣👣👣 Key Features 👣👣👣👣 <a name="key-features"></a>
 
-- [ ] **List of 250 countries**
-- [ ] **Data coming from Api https://restcountries.com**
-- [ ] **Responsive but better working for mobile**
-- [ ] **Unique page for every country information like: population, currencies, languages and much more!**
-- [ ] **Filter countries by continent**
-- [ ] **Done with React and Redux toolkit**   
+- [ ] **Tours page**
+- [ ] **Single tour page with a tour details**
+- [ ] **Authentication**
+
 
 <!-- GETTING STARTED -->
 
