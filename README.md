@@ -119,15 +119,25 @@ Feel free to check the [issues page](./).
 
 <!-- SUPPORT -->
 
-## ⭐️ Show your support <a name="support"></a>
+# ⭐️⭐️⭐️⭐️ Show your support ⭐️⭐️⭐️⭐️<a name="support"></a>
 
 If you like this project, please give it a star ⭐️.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FUTURE FEATURES -->
+
+# 🔮🔮🔮🔮 Future Features 🔮🔮🔮🔮 <a name="future-features"></a>
+
+- [ ] **Add authentication**
+- [ ] **Own design**
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- ACKNOWLEDGEMENTS -->
 
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
+# 🙏🙏🙏🙏 Acknowledgments 🙏🙏🙏🙏 <a name="acknowledgements"></a>
 
 I would like to thank Jonas Shedtman.
 
