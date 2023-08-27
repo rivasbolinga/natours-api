@@ -13,3 +13,33 @@ exports.createReview = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+exports.getAllreviews = catchAsync(async (req, res, next) => {
+  const features = new APIFeatures(Review.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+    const reviews = await features.query;
+    res.status(200).json({
+      status: 'success',
+      results: reviews.length,
+      data: {
+        reviews,
+      },
+    });
+});
+
+exports.getReview = catchAsync(async (req, res, next) => {
+  const review = await Review.findById(req.params.id);
+  if (!review) {
+    return next(new AppError('No review found with that ID', 404));
+  }
+  res.status(200).json({
+    status: 'success',
+    results: review.length,
+    data: {
+      review,
+    },
+  });
+});
