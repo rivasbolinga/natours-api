@@ -20,14 +20,14 @@ exports.getAllreviews = catchAsync(async (req, res, next) => {
     .sort()
     .limitFields()
     .paginate();
-    const reviews = await features.query;
-    res.status(200).json({
-      status: 'success',
-      results: reviews.length,
-      data: {
-        reviews,
-      },
-    });
+  const reviews = await features.query;
+  res.status(200).json({
+    status: 'success',
+    results: reviews.length,
+    data: {
+      reviews,
+    },
+  });
 });
 
 exports.getReview = catchAsync(async (req, res, next) => {
